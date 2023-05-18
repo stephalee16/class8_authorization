@@ -7,6 +7,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new
     @task["description"] = params["task"]["description"]
+    @task["user_id"]=@current_user["id"]
     @task.save
     redirect_to "/tasks"
   end
@@ -17,3 +18,4 @@ class TasksController < ApplicationController
     redirect_to "/tasks"
   end
 end
+

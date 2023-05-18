@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources "users"
   resources "sessions"
 
-  # get "/", :controller => "sessions", :action => "new"
+  get "/", :controller => "sessions", :action => "new"
+  get "/logout", :controller => "sessions", :action => "destroy"
 end
